@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🖼️ ViT-LoRA-Incremental-Learning
+# ViT+LoRA 增量学习 | ViT-LoRA-Incremental-Learning
 
 ### ViT + LoRA incremental learning.
 
