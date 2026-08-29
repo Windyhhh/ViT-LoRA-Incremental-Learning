@@ -61,6 +61,50 @@ ViT-LoRA-Incremental-Learning/
 
 ---
 
+## 技术实现细节
+
+### 架构概览
+
+项目采用模块化设计，核心目录包括：**configs, docs, src**。
+
+### 核心类与模块
+
+- **TaskDataset**
+- **Config**
+- **LoRALayer**
+- **LoRAViT**
+- **PrototypeClassifier**
+
+### 关键函数
+
+- `set_seed`, `get_task_datasets`, `get_full_test_dataset`, `train`, `forward`, `make_lora_forward`, `extract_prototypes`, `refine_prototypes_in_merged_space`, `predict`
+
+### 技术栈与依赖
+
+**核心框架/库**：NumPy, PyTorch
+
+**主要 import**：
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.utils.data import DataLoader, Dataset
+import torchvision.transforms as T
+import torchvision.datasets as datasets
+from tqdm import tqdm
+from pathlib import Path
+import numpy as np
+import random
+```
+
+### 实现要点
+
+- 以 `TaskDataset` 为核心类，封装主要业务逻辑
+- 通过 `set_seed` 等函数实现核心流程编排
+- 基于 NumPy, PyTorch 构建，技术栈成熟稳定
+- 代码结构清晰，模块间低耦合，便于扩展和维护
+
+---
 ## License
 
 MIT — free to use, modify and distribute.
